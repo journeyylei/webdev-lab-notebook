@@ -1,3 +1,70 @@
+/* nav bar , specifying to make it styled in the same way*/
+nav {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  background-color: var(--black);
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* display items next to each other */
+nav ul li {
+  display: inline-block;
+  /* width: 120px;
+  margin: 1em;          moved to the a elements because of the cursor, looks better and is easier, for example the place to click is bigger
+  padding: 0.5em 1em; */
+}
+
+/* anchor links */
+nav ul li a {
+  display: block;
+  /* width: 100%; */
+  /* margin: 1em;  take this out as to not hover over the margin and actually grabbing all of the info*/
+  padding: 1em;
+  text-decoration: none;
+  color: var(--white);
+}
+
+nav ul li a:hover {
+  background-color: var(--gray1);
+}
+
+.main {
+  margin-top: 100px; /* to avoid content being hidden behind the fixed nav */
+  padding: 0 0.5em;
+}
+
+/* setting up mobile view first, least amount of space, be critical of what is shown, not include media inqueries */
+body {
+  background: var(--purple);
+  color: var(--white);
+}
+
+@media (max-width: 414px) {
+  nav ul li {
+    width: 100%;
+  }
+
+  .main {
+    margin-top: 220px; /* just to make sure and avoid content being hidden behind the fixed nav */
+  }
+}
+
+/* everything in between mobile and laptop view */
+@media (min-width: 415px) and (max-width: 1023px) {
+  body {
+    background: var(--orange);
+    color: var(--black);
+  }
+}
+
+/* laptop view */
 @media (min-width: 1024px) {
   body {
     background: var(--green);
